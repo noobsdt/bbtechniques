@@ -46,8 +46,6 @@ target.com//secret// -> ```200 Ok```
 
 target.com/./secret/./ -> ```200 Ok```
 
-target.com/%2e/secret -> ```200 Ok```
-
 target.com/secret/* -> ```200 Ok```
 
 target.com/. -> ```200 Ok```
