@@ -12,7 +12,7 @@
 - Check email and see if password token comes with attacker control domain.
 ```
 
-### Headers
+#### Headers
 Try to change Host header.
 ```
 Host: evil.com
