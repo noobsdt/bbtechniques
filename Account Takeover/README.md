@@ -79,12 +79,14 @@ email=victim@email.tld:attacker@email.tld
 
 ### Playing With Token
 ```
+- Use attacker's valid token on Victim's account
 - Completely remove the token
 - Change it to 00000000000...
 - Use null value
 - Try expired token
 - Try an array of old tokens
 - Change 1 char at the begin/end to see if the token is evaluated
+- Bruteforce token
 ```
 
 ### Other Techniques
