@@ -1,15 +1,21 @@
 ### Password Reset Functionalities
 ```
-- Register an account as an attacker
-- Change password and intercept success response of password change
-- Register an account as a victim
-- Try to change password and intercept the response
-- Paste the attacker success response
+- Register an account as an attacker.
+- Change password and intercept success response of password change.
+- Register an account as a victim.
+- Try to change password and intercept the response.
+- Paste the attacker success response.
 ```
 ```
-- Click forgot password and put your email
+- Click forgot password and put your email.
 - Intercept the request and add some headers with attacker control domain.
 - Check email and see if password token comes with attacker control domain.
+```
+
+```
+- Click forgot passowrd and enter attacker email.
+- Intercept the response (Action > Do intercept > Response to this request) and looking for password reset token or code.
+- If found, then do the same procedure for victim email. 
 ```
 
 ```
@@ -53,7 +59,9 @@ Origin
 
 ```
 victim@mail.tld%0d%0acc:attacker@mail.tld
-Or 
+```
+
+```
 victim@mail.tld%0d%0abcc:attacker@mail.tld
 ```
 
