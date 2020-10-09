@@ -6,5 +6,5 @@ http://sub.target.com/web/aDmiN/FUZZ --> Critical Sensitive Files
 ```
 #### Bypass Authentication
 ```
-http://sub.target.com/web/aDmiN;/
+http://sub.target.com/web/admin;/
 ```
