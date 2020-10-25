@@ -62,6 +62,12 @@ ImageTragic
 ```
 Change 'type=file' to 'type=url'
 ```
+#### DoS Attack via Long File Name
+```
+# This one is a sample
+# File name can be larger than this
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbb.jpeg
+```
 
 #### Uploaded file not found? Try Path Traversal on filename.
 #### Try to brutefore file extension
