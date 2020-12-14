@@ -1,3 +1,5 @@
+## Account Takeover Techniques
+
 ### Password Reset Functionalities
 ```
 - Register an account as an attacker.
@@ -23,10 +25,15 @@
 - Go to settings and change your email to victim@email.tld.
 - Now go to attacker@email.tld's inbox and click on password reset link.
 - See the link is working or not.
-```
-#### Impact
-```
+
+# Impact
 Sometime web app doesn't care about email. User can create more than one account using same email with unique username. 
+```
+#### Session Puzzling/Session Overloading Attack
+```
+- Try to access victim's dashboard or profile page normaly which is accessible after login.
+- Go to Forgot Password and request for password change behalf of victim.
+- Now directly go to dashboard or profile page. If victim's dashboard or profile accessible then it is Session Puzzling/Session Overloading Attack.
 ```
 
 #### Headers
