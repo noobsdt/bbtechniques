@@ -2,14 +2,6 @@
 
 
 ### Bypasses
-
-#### Null Byte Bypass
-##### Make a file image.phpA.png and replace with Null Byte instead of A
-```
-image.php%00.png
-image.php\x00.png
-```
-
 #### MIME Type Bypass
 ```
 Content-Type: image/jpeg
@@ -36,6 +28,30 @@ mv image.jpg image.php.jpg
 | **jsp**      | .jsp, .jspx, .jsw, .jsv, and .jspf      |
 | **Coldfusion**      | .cfm, .cfml, .cfc, .dbm      |
 
+#### Other Techniques(Extension Bypass)
+```
+file.shtml
+file.asa
+file.cert
+```
+
+##### Captal Letters of Extensions
+```
+file.PhP
+file.AspX
+```
+
+#### Using Special Trailing Such as Spaces, Dots or Null Characters
+```
+file.asp...
+file.php;jpg
+file.php%00.png
+file.php\x00.png
+file.jpg%00.php
+```
+
+#### In IIS6 vulnerability, if the file name is ```file.asp;file.jpg```, the file will be executed as ```file.asp```.
+#### In NginX, if the original file name is ```test.jpg```, testers/hackers may change it to ```test.jpg/x.php```, the file will be executed as ```x.php```.
 
 ### Chain With Other Vulnerabilities
 
