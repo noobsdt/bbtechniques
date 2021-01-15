@@ -95,5 +95,8 @@ Change 'type=file' to 'type=url'
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbb.jpeg
 ```
 
+#### DoS Attack via Pixel Flood Attack
+![lottapixel.jpg](../Images/lottapixel.jpg)
+
 #### Uploaded file not found? Try Path Traversal on filename.
 #### Try to brutefore file extension
