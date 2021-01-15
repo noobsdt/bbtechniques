@@ -35,7 +35,7 @@ file.asa
 file.cert
 ```
 
-##### Captal Letters of Extensions
+##### Capital Letters of Extensions
 ```
 file.PhP
 file.AspX
@@ -63,7 +63,7 @@ xss.svg -> file contain xss payload inside svg format
 
 #### SQL Injection
 ```
-'sleep(10).jpg
+' sleep(10) -- -.jpg
 ```
 
 #### Path Traversal
@@ -97,6 +97,13 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbb.jpeg
 
 #### DoS Attack via Pixel Flood Attack
 ![lottapixel.jpg](../Images/lottapixel.jpg)
+
+#### Bypass
+```
+Replace the 64250*64250px pixel value with 0xfafa*0xfafa
+
+For pixel change: https://www.resizepixel.com/
+```
 
 #### Uploaded file not found? Try Path Traversal on filename.
 #### Try to brutefore file extension
