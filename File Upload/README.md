@@ -63,7 +63,7 @@ xss.svg -> file contain xss payload inside svg format
 
 #### SQL Injection
 ```
-' sleep(10) -- -.jpg
+'sleep(10).jpg
 ```
 
 #### Path Traversal
