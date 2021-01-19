@@ -104,6 +104,12 @@ Replace the 64250*64250px pixel value with 0xfafa*0xfafa
 
 For pixel change: https://www.resizepixel.com/
 ```
+#### Meatadata Not Stripped From Image
+```
+- Upload image
+- Copy the uploaded image url and paste it http://exif.regex.info/exif.cgi
+- See any sensitive data like geolocation, IP address, device name etc. is exposed or not.
+```
 
 #### Uploaded file not found? Try Path Traversal on filename.
 #### Try to brutefore file extension
