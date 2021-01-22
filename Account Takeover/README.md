@@ -103,6 +103,21 @@ email=victim@email.tld:attacker@email.tld
 - Change 1 char at the begin/end to see if the token is evaluated
 - Bruteforce token
 ```
+### Pre-Account Takeover
+**Suppose two features(Login via OAuth and email) are available and no email verification needed after registration.**
+```
+- Create an account using victim email.
+- Suppose the victim create an account via OAuth(Login With Google) using same email.
+- Now attacker is able to access the victim account.
+```
+*May be victim will not be able to create an account with this email(Email Already Exist)*
+
+### Admin Panel Access
+**Suppose no email verification needed after registration.**
+```
+- Try to find out other stuff's email of the company(Use hunter.io).
+- Try to register with those email one by one and see it is possible to access stuff's account or admin panel or not.
+```
 
 ### Other Techniques
 ```
