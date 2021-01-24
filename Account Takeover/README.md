@@ -135,6 +135,12 @@ email=victim@email.tld:attacker@email.tld
 - Try to find out other stuff's email of the company(Use hunter.io).
 - Try to register with those email one by one and see it is possible to access stuff's account or admin panel or not.
 ```
+*Sometime application uses username or firstname to create particular user's profile.*
+*For example: https://site.com/user/bob/*
+```
+- Create an account and notice carefully application's naming convention.
+- Change your account's username or firstname to some common name for admin panel i.e. admin, administrator, dashboard etc.
+```
 
 ### Other Techniques
 ```
