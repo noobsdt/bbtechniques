@@ -147,6 +147,12 @@ HTTP/1.1 200 OK
 - Match bad response and replace with good one
 - Use super long string
 ```
+**While inviting users into your account/organization**
+```
+- Try inviting company emails and add a new field "password":"example123" or "pass":"example123" in the request.
+  You may end up resetting a user password.
+- For Company emails check on http://hunter.io.
+```
 
 ### Playing With Token
 ```
