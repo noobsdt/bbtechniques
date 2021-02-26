@@ -28,6 +28,8 @@ Host: target.tld?><a href=http://evil.com
 Other Headers
 ```
 X-Forwarded-Host: attacker.com
+X-Forwarded-Origin: 127.0.0.1
+X-Custom-IP-Authorization: 127.0.0.1
 X-Original-Url: attacker.com
 X-Forwarded-Server: attacker.com
 X-Host: attacker.com
