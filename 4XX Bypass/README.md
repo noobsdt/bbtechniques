@@ -1,3 +1,15 @@
+[1. 401 Unauthorized Bypass](https://github.com/noobsdt/bbtechniques/blob/master/4XX%20Bypass/README.md#401-unauthorized-bypass)
+
+[2. 403 Forbidden Bypass](https://github.com/noobsdt/bbtechniques/blob/master/4XX%20Bypass/README.md#403-forbidden-bypass)
+
+
+# 401 Unauthorized Bypass
+
+```
+X-Custom-IP-Authorization: 127.0.0.1
+X-Forwarded-Origin: 127.0.0.1
+```
+
 # 403 Forbidden Bypass
 
 ### Change request method.
@@ -51,11 +63,3 @@ target.com/./secret/./ -> ```200 Ok```
 target.com/secret/* -> ```200 Ok```
 
 target.com/. -> ```200 Ok```
-
-
-# 401 Unauthorized Bypass
-
-```
-X-Custom-IP-Authorization: 127.0.0.1
-X-Forwarded-Origin: 127.0.0.1
-```
