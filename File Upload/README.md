@@ -111,5 +111,10 @@ For pixel change: https://www.resizepixel.com/
 - See any sensitive data like geolocation, IP address, device name etc. is exposed or not.
 ```
 
+#### No Antivirus - EICAR file Upload
+```
+- Upload test malware file (EICAR).
+- Observe that there is no AV installed on the web server that stops uploading EICAR file.
+```
 #### Uploaded file not found? Try Path Traversal on filename.
 #### Try to brutefore file extension
