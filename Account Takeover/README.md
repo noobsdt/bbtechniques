@@ -27,21 +27,21 @@ Host: target.tld?><a href=http://evil.com
 ```
 Other Headers
 ```
-X-Forwarded-Host: attacker.com
+X-Forwarded-Host: 127.0.0.1
 X-Forwarded-Origin: 127.0.0.1
 X-Custom-IP-Authorization: 127.0.0.1
-X-Original-Url: attacker.com
-X-Forwarded-Server: attacker.com
-X-Host: attacker.com
-X-Rewrite-Url: attacker.com
+X-Original-Url: 127.0.0.1
+X-Forwarded-Server: 127.0.0.1
+X-Host: 127.0.0.1
+X-Rewrite-Url: 127.0.0.1
 X-Originating-IP: 127.0.0.1
-X-Forwarded-For: attacker.com
+X-Forwarded-For: 127.0.0.1
 X-Remote-IP: 127.0.0.1
 X-Remote-Addr: 127.0.0.1
 X-Client-IP: 127.0.0.1
-X-HTTP-Host-Override: attacker.com
-Forwarded: attacker.com
-X-Forwarded-Proto: attacker.com
+X-HTTP-Host-Override: 127.0.0.1
+Forwarded: 127.0.0.1
+X-Forwarded-Proto: 127.0.0.1
 ```
 
 Host Header Bypass Methods
